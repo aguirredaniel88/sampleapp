@@ -21,7 +21,7 @@ pipeline {
         junit 'target/surefire-reports/*.xml'
       }
     }
-    stage('Pruebas de Integración') {
+    stage('Pruebas de Integracion') {
       steps {
         sh 'mvn verify -DskipUTs'
         junit 'target/failsafe-reports/*.xml'
