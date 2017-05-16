@@ -39,5 +39,11 @@ pipeline {
         junit 'target/failsafe-reports/*.xml'
       }
     }
+    stage('Publicar artefactos') {
+      steps {
+        sh 'mvn clean package -DskipTests'
+        archiveArtifacts 'target/webapp*.jar'
+      }
+    }
   }
 }
